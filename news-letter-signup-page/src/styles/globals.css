@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype'); 
+}
+
+body{
+  @apply bg-slate-700 text-gray-800 font-RobotoRegular;
+}
+
+
+.pre {
+  @apply bg-red-400 bg-opacity-30  sm:bg-blue-400 sm:bg-opacity-30 md:bg-green-400  md:bg-opacity-30 lg:bg-cyan-400 lg:bg-opacity-30;
+}
+
+
+
