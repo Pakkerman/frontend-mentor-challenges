@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply bg-Cream;
+  font-family: 'DM Sans';
+  font-weight: 400;
+}
+
+
+
+
+.pre {
+  @apply bg-red-400 bg-opacity-30  sm:bg-blue-400 sm:bg-opacity-30 md:bg-green-400  md:bg-opacity-30 lg:bg-cyan-400 lg:bg-opacity-30;
+}
+
+
+.attribution { 
+  font-size: 11px; text-align: center; 
+}
+.attribution a {
+   color: hsl(228, 45%, 44%); 
+}
