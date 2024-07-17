@@ -1,5 +1,6 @@
 import data from "data/data.json";
 import Comment from "~/components/Comment";
+import CommentForm from "~/components/CommentForm";
 
 export type Comment = {
   id: number;
@@ -41,6 +42,7 @@ export default function CommentSection() {
             <Comment comment={item} />
           </li>
         ))}
+        <CommentForm />
       </ul>
     </div>
   );

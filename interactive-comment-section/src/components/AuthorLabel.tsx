@@ -1,10 +1,12 @@
-import type { Comment } from "~/_components/commentSection";
+import type { Comment, ReplyComment } from "~/_components/commentSection";
+
+import data from "data/data.json";
 
 export default function AuthorLabel({
   comment,
   replyButton,
 }: {
-  comment: Comment;
+  comment: Comment | ReplyComment;
   replyButton: React.ReactNode;
 }) {
   const { user, createdAt } = comment;
@@ -17,7 +19,14 @@ export default function AuthorLabel({
             alt="user profile thumbnail"
             className="h-8 w-8"
           />
-          <div className="text-neutral-dark-blue">{user?.username}</div>
+          <div className="font-bold text-neutral-dark-blue">
+            {user?.username}
+          </div>
+          {user.username === data.currentUser.username && (
+            <p className="rounded-sm bg-primary-moderate-blue px-2 text-sm font-bold leading-5 text-neutral-light-gray">
+              you
+            </p>
+          )}
         </div>
         <div className="text-neutral-grayish-blue">{createdAt}</div>
       </div>

@@ -7,7 +7,7 @@ import { Reply } from "./Reply";
 import ReplyForm from "./ReplyInput";
 import ScoreCounter from "./ScoreCounter";
 import AuthorLabel from "./AuthorLabel";
-import ReplyButton from "./ReplyButton";
+import ReplyButton from "./buttons/ReplyButton";
 
 export default function Comment({ comment }: { comment: Comment }) {
   const [showReplyInput, setShowReplyInput] = useState(false);
@@ -40,7 +40,7 @@ function CommentCard({
   const { content, score } = comment;
 
   return (
-    <div className="flex max-w-2xl flex-col gap-4 rounded-lg bg-neutral-white p-6 sm:flex-row sm:px-4 sm:py-6">
+    <div className="flex max-w-2xl flex-col gap-4 rounded-lg bg-neutral-white p-4 sm:flex-row sm:px-4 sm:py-6">
       <div className="flex flex-col gap-2">
         <AuthorLabel
           comment={comment}
