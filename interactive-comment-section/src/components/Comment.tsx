@@ -16,7 +16,7 @@ export default function Comment({ comment }: { comment: Comment }) {
   return (
     <div
       ref={animationParent}
-      className="flex flex-col items-center justify-center gap-2 transition-all"
+      className="flex flex-col items-center justify-center gap-4 transition-all"
     >
       <CommentCard
         comment={comment}

@@ -17,12 +17,14 @@ export function Reply({ replies }: { replies: ReplyComment[] }) {
 
   console.log(showRepliesInput);
 
+  if (replies.length === 0) return;
+
   return (
-    <div className="group/indent flex items-stretch justify-center ">
+    <div className="group/indent flex justify-center">
       <div className="w-[10%] sm:w-[15%]">
         <div className="mr-auto h-full w-1 rounded-full bg-neutral-light-gray group-hover/indent:bg-primary-moderate-blue sm:mx-auto" />
       </div>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-4 ">
         {replies.length > 0 &&
           replies.map((item, idx) => (
             <li className="flex flex-col gap-2" key={item.id}>

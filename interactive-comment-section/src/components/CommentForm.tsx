@@ -3,37 +3,12 @@
 import clsx from "clsx";
 import data from "data/data.json";
 
-// export default function CommentForm() {
-//   const { currentUser } = data;
-//   return (
-//     <div className="flex max-w-2xl flex-col gap-4 rounded-lg bg-neutral-white p-4 sm:flex-row sm:px-4 sm:py-6">
-//       <textarea
-//         className="rounded-lg border-[1.5px] border-neutral-light-gray p-3"
-//         name="comment"
-//         id="comment"
-//         placeholder="Add a comment..."
-//       />
-//
-//       <div className="flex w-full items-center justify-between sm:order-first sm:w-20">
-//         <img
-//           src={currentUser.image.png}
-//           alt="user profile thumbnail"
-//           className="h-8 w-8"
-//         />
-//         <button className="rounded-lg bg-primary-moderate-blue px-8 py-3 font-bold text-neutral-very-light-gray">
-//           SEND
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
-//
 export default function CommentForm() {
   const { currentUser } = data;
   return (
     <div
       className={clsx(
-        "max-w-2xl gap-4 rounded-lg bg-neutral-white p-4 sm:px-4 sm:py-6",
+        "mb-10 max-w-2xl gap-4 rounded-lg bg-neutral-white p-4 sm:px-4 sm:py-6",
         "grid",
         " sm:grid-cols-[1fr_7fr_2fr] sm:grid-rows-none",
       )}
