@@ -1,6 +1,6 @@
 import data from "data/data.json";
-import Comment from "~/components/Comment";
-import CommentForm from "~/components/CommentForm";
+import Comment from "src/app/components/Comment";
+import CommentForm from "src/app/components/CommentForm";
 
 export type Comment = {
   id: number;

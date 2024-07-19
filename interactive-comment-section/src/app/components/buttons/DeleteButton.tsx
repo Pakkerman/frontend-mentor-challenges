@@ -1,4 +1,4 @@
-import { DeleteIcon } from "~/svgs";
+import { DeleteIcon } from "../svgs";
 
 export default function DeleteButton({}: {}) {
   return (

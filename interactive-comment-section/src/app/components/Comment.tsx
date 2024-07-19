@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Comment } from "~/_components/commentSection";
+import type { Comment } from "src/app/_components/commentSection";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { Reply } from "./Reply";
 import ReplyForm from "./ReplyInput";

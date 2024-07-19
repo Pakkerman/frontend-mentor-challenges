@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata = {
   title: "Create T3 App",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-neutral-very-light-gray">
-      <body>{children}</body>
+      <TRPCReactProvider>
+        <body>{children}</body>
+      </TRPCReactProvider>
     </html>
   );
 }

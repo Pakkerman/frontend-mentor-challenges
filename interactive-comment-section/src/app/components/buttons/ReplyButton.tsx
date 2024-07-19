@@ -1,4 +1,4 @@
-import { ReplyIcon } from "~/svgs";
+import { ReplyIcon } from "../svgs";
 
 export default function ReplyButton({
   toggleReply,

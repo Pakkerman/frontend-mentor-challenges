@@ -1,4 +1,4 @@
-import { EditIcon } from "~/svgs";
+import { EditIcon } from "../svgs";
 
 export default function EditButton({}: {}) {
   return (
