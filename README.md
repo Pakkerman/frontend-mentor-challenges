@@ -10,7 +10,7 @@ A collection of challenges of [Frontend Mentor](https://www.frontendmentor.io/ch
 git clone --bare https://github.com/Pakkerman/frontend-mentor-challenges
 git worktree add project
 cd project/
-git sparse-checkout --cone --sparse-index project
+git sparse-checkout set --cone --sparse-index project
 ```
 
 - after editing project merge back to trunk and push
