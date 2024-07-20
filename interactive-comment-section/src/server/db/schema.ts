@@ -48,3 +48,10 @@ export const users = createTable("user", {
   username: text("username", { length: 256 }),
   avatar: text("avatar", { length: 256 }),
 });
+
+export type SelectUser = typeof users.$inferSelect;
+export type InsertUser = typeof users.$inferInsert;
+export type SelectComment = typeof comments.$inferSelect;
+export type InsertComment = typeof comments.$inferInsert;
+
+export type Comment = SelectUser & SelectComment;

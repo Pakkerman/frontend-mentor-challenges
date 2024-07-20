@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import type { Comment } from "src/app/_components/commentSection";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { Reply } from "./Reply";
 import ReplyForm from "./ReplyInput";
 import ScoreCounter from "./ScoreCounter";
 import AuthorLabel from "./AuthorLabel";
 import ReplyButton from "./buttons/ReplyButton";
+import type { Comment } from "~/server/db/schema";
 
 export default function Comment({ comment }: { comment: Comment }) {
   const [showReplyInput, setShowReplyInput] = useState(false);
@@ -24,8 +24,8 @@ export default function Comment({ comment }: { comment: Comment }) {
           setShowReplyInput(!showReplyInput);
         }}
       />
-      <Reply replies={comment.replies} />
-      <ReplyForm show={showReplyInput} to={comment.user.username} />
+      {/* <Reply replies={comment.replies} /> */}
+      {/* <ReplyForm show={showReplyInput} to={comment.user.username} /> */}
     </div>
   );
 }
@@ -49,7 +49,7 @@ function CommentCard({
         <p className="text-neutral-grayish-blue">{content}</p>
       </div>
       <div className="flex w-full items-center justify-between sm:order-first sm:w-20">
-        <ScoreCounter score={score} />
+        <ScoreCounter score={1} />
         <div className="sm:hidden">
           <ReplyButton toggleReply={toggleReply} />
         </div>
