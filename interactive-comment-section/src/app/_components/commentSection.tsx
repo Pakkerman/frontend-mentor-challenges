@@ -39,6 +39,8 @@ export default function CommentSection() {
   const { data: comments, isLoading } =
     api.comment.getAllWithUsername.useQuery();
 
+  console.log(comments);
+
   // const { comments } = data;
   return (
     <div className="h-full w-full">

@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
-import { comments, users } from "~/server/db/schema";
+import { Comment, comments, users } from "~/server/db/schema";
 import { eq } from "drizzle-orm";
 
 export const commentRouter = createTRPCRouter({
@@ -29,12 +29,26 @@ export const commentRouter = createTRPCRouter({
         .from(comments)
         .leftJoin(users, eq(comments.authorId, users.id));
 
-      return data.map((item) => ({ ...item.user, ...item.comment }));
+      return data.map((item) => ({
+        ...item.user,
+        ...item.comment,
+      })) as Comment[];
     } catch (err) {
-      console.log("something wrong with comment.getAll: ", err);
+      console.log("something wrong with comment.getAllWithUsername: ", err);
     }
   }),
-});
 
-// export type InsertUser = typeof usersTable.$inferInsert;
-export type GetAllWithUsername = typeof comments.$inferSelect;
+  deleteById: publicProcedure
+    .input(z.object({ commentId: z.number() }))
+    .mutation(async ({ ctx, input }) => {
+      try {
+        const res = await ctx.db
+          .delete(comments)
+          .where(eq(comments.id, input.commentId));
+
+        return res;
+      } catch (err) {
+        console.log("something wrong with comment.deleteById: ", err);
+      }
+    }),
+});

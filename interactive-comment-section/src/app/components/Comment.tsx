@@ -8,6 +8,7 @@ import ScoreCounter from "./ScoreCounter";
 import AuthorLabel from "./AuthorLabel";
 import ReplyButton from "./buttons/ReplyButton";
 import type { Comment } from "~/server/db/schema";
+import DeleteButton from "./buttons/DeleteButton";
 
 export default function Comment({ comment }: { comment: Comment }) {
   const [showReplyInput, setShowReplyInput] = useState(false);
@@ -51,6 +52,7 @@ function CommentCard({
       <div className="flex w-full items-center justify-between sm:order-first sm:w-20">
         <ScoreCounter score={1} />
         <div className="sm:hidden">
+          <DeleteButton commentId={comment.id} />
           <ReplyButton toggleReply={toggleReply} />
         </div>
       </div>

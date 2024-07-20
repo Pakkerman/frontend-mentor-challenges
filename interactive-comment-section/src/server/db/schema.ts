@@ -53,5 +53,7 @@ export type SelectUser = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 export type SelectComment = typeof comments.$inferSelect;
 export type InsertComment = typeof comments.$inferInsert;
+export type SelectReply = typeof replies.$inferSelect;
+export type InsertReply = typeof replies.$inferInsert;
 
 export type Comment = SelectUser & SelectComment;

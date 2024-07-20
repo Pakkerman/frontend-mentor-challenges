@@ -5,9 +5,13 @@ import data from "data/data.json";
 import { api } from "~/trpc/react";
 
 export default function CommentForm() {
+  const utils = api.useUtils();
   const { mutate } = api.comment.create.useMutation({
     onMutate: () => {
       console.log("mutation!");
+    },
+    onSuccess: () => {
+      utils.comment.getAllWithUsername.invalidate();
     },
   });
 
