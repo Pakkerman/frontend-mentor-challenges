@@ -8,6 +8,30 @@ export default function AuthorLabel({
   replyButton: React.ReactNode;
 }) {
   const { username, createdAt } = comment;
+  const currentTime = new Date().getTime();
+  const elapsedSeconds = (currentTime - createdAt.getTime()) / 1000;
+
+  let commentedTime = "";
+  if (2419200 <= elapsedSeconds) {
+    const time = +(elapsedSeconds / 2419200).toFixed();
+    commentedTime = time < 2 ? "a month ago" : `${time} months ago`;
+  } else if (604800 <= elapsedSeconds) {
+    const time = +(elapsedSeconds / 604800).toFixed();
+    commentedTime = time < 2 ? "a week ago" : `${time} weeks ago`;
+  } else if (86400 <= elapsedSeconds) {
+    const time = +(elapsedSeconds / 86400).toFixed();
+    commentedTime = time < 2 ? "a day ago" : `${time} days ago`;
+  } else if (3600 <= elapsedSeconds) {
+    const time = +(elapsedSeconds / 3600).toFixed();
+    commentedTime = time < 2 ? "a hour ago" : `${time} hours ago`;
+  } else if (60 <= elapsedSeconds) {
+    const time = +(elapsedSeconds / 60).toFixed();
+    commentedTime = time < 2 ? "a minute ago" : `${time} minutes ago`;
+  } else if (5 <= elapsedSeconds) {
+    commentedTime = `${elapsedSeconds.toFixed()} seconds ago`;
+  } else {
+    commentedTime = "just now";
+  }
 
   return (
     <div className="flex justify-between">
@@ -26,9 +50,7 @@ export default function AuthorLabel({
             </p>
           )}
         </div>
-        <div className="text-neutral-grayish-blue">
-          {createdAt.toTimeString()}
-        </div>
+        <div className="text-neutral-grayish-blue">{commentedTime}</div>
       </div>
       <div className="hidden md:block">{replyButton}</div>
     </div>
